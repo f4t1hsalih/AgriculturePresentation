@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class News
+    public class Announcement
     {
-        public int NewsID { get; set; }
-        public string NewsTitle { get; set; }
+        public int AnnouncementID { get; set; }
+        public string Title { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
         public bool Status { get; set; }
