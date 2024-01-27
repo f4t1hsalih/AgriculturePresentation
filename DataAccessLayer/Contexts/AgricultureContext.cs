@@ -7,7 +7,7 @@ namespace DataAccessLayer.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server = DESKTOP - 9D1JVJE\\SQLEXPRESS; database = DbAgriculture; integrated security = true; encrypt = false");
+            optionsBuilder.UseSqlServer("server = DESKTOP-9D1JVJE\\SQLEXPRESS; database = DbAgriculture; integrated security = true; encrypt = false");
         }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Contact> Contacts { get; set; }

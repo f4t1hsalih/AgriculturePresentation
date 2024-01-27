@@ -8,8 +8,8 @@ namespace EntityLayer.Concrete
 {
     public class Team
     {
-        public int PersonID { get; set; }
-        public string PersonName { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
         public string Title { get; set; }
         public string ImageUrl { get; set; }
         public string FacebookUrl { get; set; }
