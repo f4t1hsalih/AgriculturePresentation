@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete.EntityFramework
 {
-    public class EfServiceDal : GenericRepository<Image>, IImageDal
+    public class EfServiceDal : GenericRepository<Service>, IServiceDal
     {
     }
 }
