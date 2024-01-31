@@ -7,6 +7,8 @@
 <h1>Hizmet Düzenle</h1>
 
 <form method="post">
+    @*Buradaki HiddenFor işlemi ile ilgili id bulunup o id deki değer güncelleniyor,
+    yazılmadığı taktirde güncelleme işlemi yapmaz kaydetme işlemi yapar(Aynı değeri tekrar kaydeder)*@
     @Html.HiddenFor(x => x.ServiceID)
     <div class="form-group">
         @Html.Label("Başlık:")
