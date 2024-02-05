@@ -2,6 +2,8 @@
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using BusinessLayer.ValidationRules;
+using FluentValidation.Results;
 
 namespace AgriculturePresentation.Controllers
 {
@@ -29,8 +31,32 @@ namespace AgriculturePresentation.Controllers
         [HttpPost]
         public IActionResult AddTeam(Team team)
         {
-            _teamService.Insert(team);
-            return RedirectToAction("Index");
+            // Team nesnesinin doğrulama kurallarını tanımlayan TeamValidator sınıfı örneği oluşturulur.
+            TeamValidator validationRules = new TeamValidator();
+
+            // Oluşturulan TeamValidator sınıfı kullanılarak Team nesnesinin doğrulama işlemi yapılır.
+            // ValidationResult, FluentValidation kütüphanesinin bir parçası olan ve doğrulama sonuçlarını içeren bir sınıftır.
+            ValidationResult result = validationRules.Validate(team);
+
+            // Eğer doğrulama başarılı ise (hiçbir kural ihlal edilmemişse) yeni takım eklenir ve Index sayfasına yönlendirme yapılır.
+            if (result.IsValid)
+            {
+                _teamService.Insert(team);
+                return RedirectToAction("Index");
+            }
+
+            // Eğer doğrulama başarısız ise (bir veya daha fazla kural ihlal edilmişse) hata mesajları ModelState'e eklenir.
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+                    // Hata mesajları, her bir özellik (PropertyName) için ve bu özellikteki hatanın açıklaması (ErrorMessage) ile birlikte ModelState'e eklenir.
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+            }
+
+            // Hata mesajlarıyla birlikte, kullanıcının girdiği verilerle birlikte aynı sayfa tekrar gösterilir.
+            return View();
         }
     }
 }

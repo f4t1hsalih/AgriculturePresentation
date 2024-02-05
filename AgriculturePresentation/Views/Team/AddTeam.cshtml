@@ -4,43 +4,84 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+<!-- Ana İçerik Bölümü -->
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
+            <!-- Form başlığı -->
             <h4 class="card-title">Yeni Personel Kaydı</h4>
+
+            <!-- Form başlangıcı -->
             <form class="forms-sample" method="post">
+
+                <!-- İsim Giriş Alanı -->
                 <div class="form-group">
-                    <label for="exampleInputName1">İsim</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="İsim" asp-for="Name">
+                    <label for="exampleInputName">İsim</label>
+                    <!-- İsim doğrulama hatası mesajı (Validasyondan gelen hata mesajı bu alanda gösterilir.)-->
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <!-- İsim giriş alanı -->
+                    <input type="text" class="form-control" id="exampleInputName" placeholder="İsim" asp-for="Name">
                 </div>
+
+                <!-- Görev Giriş Alanı -->
                 <div class="form-group">
-                    <label for="exampleInputName2">Görev</label>
-                    <input type="text" class="form-control" id="exampleInputName2" placeholder="Görev" asp-for="Title">
-                </div>                
-                <div class="form-group">
-                    <label for="exampleInputName3">Resim Url</label>
-                    <input type="text" class="form-control" id="exampleInputName3" placeholder="Resim URL" asp-for="ImageUrl">
-                </div>                
-                <div class="form-group">
-                    <label for="exampleInputName3">Facebook Url</label>
-                    <input type="text" class="form-control" id="exampleInputName3" placeholder="Fcebook URL" asp-for="FacebookUrl">
-                </div>                
-                <div class="form-group">
-                    <label for="exampleInputName4">Instagram Url</label>
-                    <input type="text" class="form-control" id="exampleInputName4" placeholder="Instagram Url" asp-for="InstagramUrl">
+                    <label for="exampleInputTitle">Görev</label>
+                    <!-- Görev doğrulama hatası mesajı -->
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <!-- Görev giriş alanı -->
+                    <input type="text" class="form-control" id="exampleInputTitle" placeholder="Görev" asp-for="Title">
                 </div>
+
+                <!-- Resim URL Giriş Alanı -->
                 <div class="form-group">
-                    <label for="exampleInputName5">Web Site Url</label>
-                    <input type="text" class="form-control" id="exampleInputName5" placeholder="Web Site Url" asp-for="WebSiteUrl">
+                    <label for="exampleInputImageUrl">Resim Url</label>
+                    <!-- Resim URL doğrulama hatası mesajı -->
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    <!-- Resim URL giriş alanı -->
+                    <input type="text" class="form-control" id="exampleInputImageUrl" placeholder="Resim URL" asp-for="ImageUrl">
                 </div>
+
+                <!-- Facebook URL Giriş Alanı -->
                 <div class="form-group">
-                    <label for="exampleInputName6">Twitter Url</label>
-                    <input type="text" class="form-control" id="exampleInputName6" placeholder="Twitter Url" asp-for="TwitterUrl">
+                    <label for="exampleInputFacebookUrl">Facebook Url</label>
+                    <!-- Facebook URL doğrulama hatası mesajı -->
+                    <span asp-validation-for="FacebookUrl" class="text-danger"></span>
+                    <!-- Facebook URL giriş alanı -->
+                    <input type="text" class="form-control" id="exampleInputFacebookUrl" placeholder="Facebook URL" asp-for="FacebookUrl">
                 </div>
+
+                <!-- Instagram URL Giriş Alanı -->
+                <div class="form-group">
+                    <label for="exampleInputInstagramUrl">Instagram Url</label>
+                    <!-- Instagram URL doğrulama hatası mesajı -->
+                    <span asp-validation-for="InstagramUrl" class="text-danger"></span>
+                    <!-- Instagram URL giriş alanı -->
+                    <input type="text" class="form-control" id="exampleInputInstagramUrl" placeholder="Instagram Url" asp-for="InstagramUrl">
+                </div>
+
+                <!-- Web Site URL Giriş Alanı -->
+                <div class="form-group">
+                    <label for="exampleInputWebSiteUrl">Web Site Url</label>
+                    <!-- Web Site URL doğrulama hatası mesajı -->
+                    <span asp-validation-for="WebSiteUrl" class="text-danger"></span>
+                    <!-- Web Site URL giriş alanı -->
+                    <input type="text" class="form-control" id="exampleInputWebSiteUrl" placeholder="Web Site Url" asp-for="WebSiteUrl">
+                </div>
+
+                <!-- Twitter URL Giriş Alanı -->
+                <div class="form-group">
+                    <label for="exampleInputTwitterUrl">Twitter Url</label>
+                    <!-- Twitter URL doğrulama hatası mesajı -->
+                    <span asp-validation-for="TwitterUrl" class="text-danger"></span>
+                    <!-- Twitter URL giriş alanı -->
+                    <input type="text" class="form-control" id="exampleInputTwitterUrl" placeholder="Twitter Url" asp-for="TwitterUrl">
+                </div>
+
+                <!-- Kaydet Butonu -->
                 <button type="submit" class="btn btn-outline-info">Kaydet</button>
             </form>
+            <!-- Form bitişi -->
         </div>
     </div>
 </div>
-
-
+<!-- Ana İçerik Bölümü Bitişi -->
