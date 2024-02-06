@@ -9,7 +9,7 @@
         <div class="card-body">
             <h4 class="card-title">Hizmet Bilgileri Güncelleme</h4>
             <form class="forms-sample" method="post">
-                @*Buradaki HiddenFor işlemi ile ilgili id bulunup o id deki değer güncelleniyor,
+                @*Buradaki HiddenFor işlemi ile ilgili id bulunup güncelleme formuna taşınır böylece bu id üzerinde işlem yapılır,
                 yazılmadığı taktirde güncelleme işlemi yapmaz kaydetme işlemi yapar(Aynı değeri tekrar kaydeder)*@
                 @Html.HiddenFor(x => x.ServiceID)
                 <div class="form-group">

@@ -58,5 +58,38 @@ namespace AgriculturePresentation.Controllers
             // Hata mesajlarıyla birlikte, kullanıcının girdiği verilerle birlikte aynı sayfa tekrar gösterilir.
             return View();
         }
+        public IActionResult DeleteTeam(int id)
+        {
+            var value = _teamService.GetById(id);
+            _teamService.Delete(value);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateTeam(int id)
+        {
+            var value = _teamService.GetById(id);
+            return View(value);
+        }
+        [HttpPost]
+        public IActionResult UpdateTeam(Team team)
+        {
+            TeamValidator validationRules = new TeamValidator();
+            ValidationResult result = validationRules.Validate(team);
+
+            if (result.IsValid)
+            {
+                _teamService.Update(team);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+            }
+            return View();
+        }
     }
 }

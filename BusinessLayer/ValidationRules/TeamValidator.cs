@@ -27,6 +27,8 @@ namespace BusinessLayer.ValidationRules
 
             // Boş olmama kuralı: Görev (Title) kısmı boş olmamalıdır.
             RuleFor(x => x.Title).NotEmpty().WithMessage("Görev Kısmı Boş Geçilemez");
+            RuleFor(x => x.Title).MinimumLength(3).WithMessage("Görev Kısmı Minumum 3 Karekter İçermelidir");
+
         }
     }
 }
