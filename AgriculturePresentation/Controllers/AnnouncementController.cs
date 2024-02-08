@@ -50,5 +50,16 @@ namespace AgriculturePresentation.Controllers
             _announcementService.Update(announcement);
             return RedirectToAction("Index");
         }
+
+        public IActionResult ChangeStatusToTrue(int id)
+        {
+            _announcementService.AnnouncementStatusToTrue(id);
+            return RedirectToAction("Index");
+        }
+        public IActionResult ChangeStatusToFalse(int id)
+        {
+            _announcementService.AnnouncementStatusToFalse(id);
+            return RedirectToAction("Index");
+        }
     }
 }
