@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataAccessLayer.Abstract
+﻿namespace DataAccessLayer.Abstract
 {
     //where T : class: Bu ifade, T tipinin bir referans tipi (class) olması gerektiğini belirtir.
     //where T : new (): Bu ifade, T tipinin parametresiz bir kurucuya sahip olması gerektiğini belirtir.
