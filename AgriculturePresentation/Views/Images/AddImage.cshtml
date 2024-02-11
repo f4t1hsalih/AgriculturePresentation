@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Image
+@{
+    ViewData["Title"] = "Resim Kaydı";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Resim Kaydı</h4>
+
+            <form class="forms-sample" method="post">
+
+                <div class="form-group">
+                    <label for="exampleInputName">Başlık</label>
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputName" placeholder="Başlık" asp-for="Title">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputTitle">Görev</label>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputTitle" placeholder="Görev" asp-for="Description">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputImageUrl">Resim Url</label>
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputImageUrl" placeholder="Resim URL" asp-for="ImageUrl">
+                </div>
+
+                <button type="submit" class="btn btn-outline-info">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>

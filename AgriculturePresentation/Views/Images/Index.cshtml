@@ -5,38 +5,57 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+yeni
+
+
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Galeri</h4>
+            <h4 class="card-title">Resimler</h4>
+
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Resim</th>
-                            <th>Başlık</th>
-                            <th>Açıklama</th>
-                            <th>Düzenle</th>
-                            <th>Sil</th>
+                            <th>
+                                User
+                            </th>
+                            <th>
+                                First name
+                            </th>
+                            <th>
+                                Progress
+                            </th>
+                            <th>
+                                Amount
+                            </th>
+                            <th>
+                                Deadline
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>@item.ImageID</td>
-                                <td>@item.ImageUrl</td>
-                                <td>@item.Title</td>
-                                <td>@item.Description</td>
-                                <td><a href="/Image/EditImage/@item.ImageID" class="btn btn-outline-twitter">Düzenle</a></td>
-                                <td><a href="/Image/DeleteImage/@item.ImageID" class="btn btn-outline-danger">Sil</a></td>
-                            </tr>
-                        }
+                        <tr>
+                            <td class="py-1">
+                                <img src="../../images/faces/face1.jpg" alt="image" />
+                            </td>
+                            <td>
+                                Herman Beck
+                            </td>
+                            <td>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </td>
+                            <td>
+                                $ 77.99
+                            </td>
+                            <td>
+                                May 15, 2015
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
-                <br />
-                <a href="/Images/AddImage/" class="btn btn-outline-info">Yeni Resim Girişi</a>
             </div>
         </div>
     </div>

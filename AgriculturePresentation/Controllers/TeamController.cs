@@ -1,9 +1,8 @@
 ﻿using BusinessLayer.Abstract;
-using DataAccessLayer.Abstract;
-using EntityLayer.Concrete;
-using Microsoft.AspNetCore.Mvc;
 using BusinessLayer.ValidationRules;
+using EntityLayer.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AgriculturePresentation.Controllers
 {
