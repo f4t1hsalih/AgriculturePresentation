@@ -3,6 +3,7 @@ using BusinessLayer.ValidationRules;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using static BusinessLayer.ValidationRules.ImageValidator;
 
 namespace AgriculturePresentation.Controllers
 {
