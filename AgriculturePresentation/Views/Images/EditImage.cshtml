@@ -7,10 +7,11 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Resim</h4>
+            <h4 class="card-title">Görsel Güncelleme</h4>
 
             <form class="forms-sample" method="post">
                 @Html.HiddenFor(x => x.ImageID)
+
                 <div class="form-group">
                     <label for="exampleInputName">Başlık</label>
                     <span asp-validation-for="Title" class="text-danger"></span>
@@ -26,7 +27,7 @@
                 <div class="form-group">
                     <label for="exampleInputImageUrl">Resim Url</label>
                     <span asp-validation-for="ImageUrl" class="text-danger"></span>
-                    <input type="text" class="form-control" id="exampleInputImageUrl" placeholder="Resim URL" asp-for="ImageUrl">
+                    <input type="file" class="form-control" id="exampleInputImageUrl" placeholder="Resim URL" asp-for="ImageUrl">
                 </div>
 
                 <button type="submit" class="btn btn-outline-info">Güncelle</button>

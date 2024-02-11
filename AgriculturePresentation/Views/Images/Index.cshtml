@@ -5,58 +5,36 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-yeni
-
-
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Resimler</h4>
+            <h4 class="card-title">Görsel Listesi</h4>
 
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>
-                                User
-                            </th>
-                            <th>
-                                First name
-                            </th>
-                            <th>
-                                Progress
-                            </th>
-                            <th>
-                                Amount
-                            </th>
-                            <th>
-                                Deadline
-                            </th>
+                            <th>#</th>
+                            <th>Başlık</th>
+                            <th>Düzenle</th>
+                            <th>Sil</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="py-1">
-                                <img src="../../images/faces/face1.jpg" alt="image" />
-                            </td>
-                            <td>
-                                Herman Beck
-                            </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </td>
-                            <td>
-                                $ 77.99
-                            </td>
-                            <td>
-                                May 15, 2015
-                            </td>
-                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="py-1"><img src="@item.ImageUrl" alt="image" /></td>
+                                <td>@item.Title</td>
+                                <td><a href="/Images/EditImage/@item.ImageID" class="btn btn-outline-success">Düzenle</a></td>
+                                <td><a href="/Images/DeleteImage/@item.ImageID" class="btn btn-outline-warning">Sil</a></td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
+            <br>
+            <a href="/Images/AddImage/" class="btn btn-info">Yeni Görsel Ekle</a>
         </div>
     </div>
 </div>

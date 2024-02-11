@@ -68,7 +68,7 @@ namespace AgriculturePresentation.Controllers
 
             if (result.IsValid)
             {
-                _ımageService.Insert(image);
+                _ımageService.Update(image);
                 return RedirectToAction("Index");
             }
             else
