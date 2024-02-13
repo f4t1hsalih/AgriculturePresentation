@@ -8,7 +8,7 @@ namespace BusinessLayer.ValidationRules
         public ImageValidator()
         {
             //Başlık Kuralları
-            RuleFor(X => X.Title).NotEmpty().WithMessage("Başlık Kısmı Boş Bırakılamaz!");
+            RuleFor(x => x.Title).NotEmpty().WithMessage("Başlık Kısmı Boş Bırakılamaz!");
             RuleFor(x => x.Title).MinimumLength(5).WithMessage("Başlık Minimum 5 Karakter Olmalıdır!");
             RuleFor(x => x.Title).MaximumLength(20).WithMessage("Başlık Maximum 20 Karakter Olmalıdır!");
 
