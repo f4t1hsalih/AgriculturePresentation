@@ -13,7 +13,10 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x => x.MapInfo).MaximumLength(20).WithMessage("Harita Bilgisi Maximum 20 Karakter Olmalıdır!");
 
             //Açıklama Kuralları
-            RuleFor(x => x.Description1).NotEmpty().WithMessage("Açıklama 1 Boş Bırakılamazz!!");
+            RuleFor(x => x.Description1).NotEmpty().WithMessage("Açıklama 1 Boş Bırakılamazz!");
+            RuleFor(x => x.Description2).NotEmpty().WithMessage("Açıklama 2 Boş Bırakılamazz!");
+            RuleFor(x => x.Description3).NotEmpty().WithMessage("Açıklama 3 Boş Bırakılamazz!");
+            RuleFor(x => x.Description4).NotEmpty().WithMessage("Açıklama 4 Boş Bırakılamazz!");
 
         }
     }

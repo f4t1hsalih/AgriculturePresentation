@@ -1,0 +1,48 @@
+﻿@model EntityLayer.Concrete.Address
+@{
+    ViewData["Title"] = "Adres Güncelleme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Adres Düzenleme</h4>
+
+            <form class="forms-sample" method="post">
+                <input type="hidden" asp-for="AddressID" />
+                <div class="form-group">
+                    <label for="exampleInput1">Açıklama1</label>
+                    <span asp-validation-for="Description1" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInput1" placeholder="Açıklama1" asp-for="Description1">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInput2">Açıklama2</label>
+                    <span asp-validation-for="Description2" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInput2" placeholder="Açıklama2" asp-for="Description2">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInput3">Açıklama3</label>
+                    <span asp-validation-for="Description3" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInput3" placeholder="Açıklama3" asp-for="Description3">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInput4">Açıklama4</label>
+                    <span asp-validation-for="Description4" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInput4" placeholder="Açıklama4" asp-for="Description4">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInput5">Harita Konumu</label>
+                    <span asp-validation-for="MapInfo" class="text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInput5" placeholder="Harita Konumu" asp-for="MapInfo">
+                </div>
+
+                <button type="submit" class="btn btn-outline-info">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
