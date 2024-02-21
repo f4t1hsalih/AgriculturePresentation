@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = null;
 }
 
 
@@ -36,6 +36,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body>
+
+    @await Component.InvokeAsync("_HeadPartial")
+
     <!-- header -->
     <div class="header">
         <div class="container">
@@ -152,7 +155,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4>In Harvest</h4>
-                    <img src="images/banner1.jpg" alt=" " class="img-responsive">
+                    <img src="~/web/images/banner1.jpg" alt=" " class="img-responsive">
                     <h5>ENVIRONMENT & SUSTAINABILITY</h5>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
                 </div>
@@ -183,9 +186,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="tab3">
                         <div class="clients">
                             <ul>
-                                <li><img src="images/c1.png" alt="clients" class="img-responsive" /><span>Sean Damon</span></li>
-                                <li><img src="images/c2.png" alt="clients" class="img-responsive" /><span>Natalie Barnes</span></li>
-                                <li><img src="images/c3.png" alt="clients" class="img-responsive" /><span>John Mccoist</span></li>
+                                <li><img src="~/web/images/c1.png" alt="clients" class="img-responsive" /><span>Sean Damon</span></li>
+                                <li><img src="~/web/images/c2.png" alt="clients" class="img-responsive" /><span>Natalie Barnes</span></li>
+                                <li><img src="~/web/images/c3.png" alt="clients" class="img-responsive" /><span>John Mccoist</span></li>
                             </ul>
                         </div>
                     </div>
@@ -249,7 +252,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="wthree_team_grids">
                 <div class="col-md-3 wthree_team_grid">
                     <div class="hovereffect">
-                        <img src="images/t1.jpg" alt=" " class="img-responsive" />
+                        <img src="~/web/images/t1.jpg" alt=" " class="img-responsive" />
                         <div class="overlay">
                             <h6>Lorem ipsum</h6>
                             <div class="rotate">
@@ -279,7 +282,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="col-md-3 wthree_team_grid">
                     <div class="hovereffect">
-                        <img src="images/t2.jpg" alt=" " class="img-responsive" />
+                        <img src="~/web/images/t2.jpg" alt=" " class="img-responsive" />
                         <div class="overlay">
                             <h6>Lorem ipsum</h6>
                             <div class="rotate">
@@ -309,7 +312,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="col-md-3 wthree_team_grid">
                     <div class="hovereffect">
-                        <img src="images/t3.jpg" alt=" " class="img-responsive" />
+                        <img src="~/web/images/t3.jpg" alt=" " class="img-responsive" />
                         <div class="overlay">
                             <h6>Lorem ipsum</h6>
                             <div class="rotate">
@@ -339,7 +342,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="col-md-3 wthree_team_grid">
                     <div class="hovereffect">
-                        <img src="images/t4.jpg" alt=" " class="img-responsive" />
+                        <img src="~/web/images/t4.jpg" alt=" " class="img-responsive" />
                         <div class="overlay">
                             <h6>Lorem ipsum</h6>
                             <div class="rotate">
@@ -433,7 +436,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4>In Harvest</h4>
-                    <img src="images/b1.jpg" alt=" " class="img-responsive">
+                    <img src="~/web/images/b1.jpg" alt=" " class="img-responsive">
                     <h5>FURTHER DEVELOPMENT IN AGRICULTURE GROWTH</h5>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
                 </div>
@@ -449,7 +452,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4>In Harvest</h4>
-                    <img src="images/b2.jpg" alt=" " class="img-responsive">
+                    <img src="~/web/images/b2.jpg" alt=" " class="img-responsive">
                     <h5>KEEPING ON ADVANCING THE AGRICULTURE INDUSTRY</h5>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
                 </div>
@@ -465,7 +468,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4>In Harvest</h4>
-                    <img src="images/b3.jpg" alt=" " class="img-responsive">
+                    <img src="~/web/images/b3.jpg" alt=" " class="img-responsive">
                     <h5>OUR FIRST STEPS ON THE MARKET AMONG AGRICULTURAL COMPANIES</h5>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
                 </div>
@@ -482,7 +485,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <ul class="clearfix demo">
                     <li>
                         <div class="gallery-grid1">
-                            <img src="images/g1.jpg" alt=" " class="img-responsive" />
+                            <img src="~/web/images/g1.jpg" alt=" " class="img-responsive" />
                             <div class="p-mask">
                                 <h4>In <span>Harvest</span></h4>
                                 <p>Neque porro quisquam est, qui dolorem ipsum.</p>
@@ -491,7 +494,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <div class="gallery-grid1">
-                            <img src="images/g2.jpg" alt=" " class="img-responsive" />
+                            <img src="~/web/images/g2.jpg" alt=" " class="img-responsive" />
                             <div class="p-mask">
                                 <h4>In <span>Harvest</span></h4>
                                 <p>Neque porro quisquam est, qui dolorem ipsum.</p>
@@ -500,7 +503,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <div class="gallery-grid1">
-                            <img src="images/g3.jpg" alt=" " class="img-responsive" />
+                            <img src="~/web/images/g3.jpg" alt=" " class="img-responsive" />
                             <div class="p-mask">
                                 <h4>In <span>Harvest</span></h4>
                                 <p>Neque porro quisquam est, qui dolorem ipsum.</p>
@@ -509,7 +512,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <div class="gallery-grid1">
-                            <img src="images/g4.jpg" alt=" " class="img-responsive" />
+                            <img src="~/web/images/g4.jpg" alt=" " class="img-responsive" />
                             <div class="p-mask">
                                 <h4>In <span>Harvest</span></h4>
                                 <p>Neque porro quisquam est, qui dolorem ipsum.</p>
@@ -518,7 +521,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <div class="gallery-grid1">
-                            <img src="images/g5.jpg" alt=" " class="img-responsive" />
+                            <img src="~/web/images/g5.jpg" alt=" " class="img-responsive" />
                             <div class="p-mask">
                                 <h4>In <span>Harvest</span></h4>
                                 <p>Neque porro quisquam est, qui dolorem ipsum.</p>
@@ -527,7 +530,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <div class="gallery-grid1">
-                            <img src="images/g6.jpg" alt=" " class="img-responsive" />
+                            <img src="~/web/images/g6.jpg" alt=" " class="img-responsive" />
                             <div class="p-mask">
                                 <h4>In <span>Harvest</span></h4>
                                 <p>Neque porro quisquam est, qui dolorem ipsum.</p>
@@ -536,7 +539,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <div class="gallery-grid1">
-                            <img src="images/g7.jpg" alt=" " class="img-responsive" />
+                            <img src="~/web/images/g7.jpg" alt=" " class="img-responsive" />
                             <div class="p-mask">
                                 <h4>In <span>Harvest</span></h4>
                                 <p>Neque porro quisquam est, qui dolorem ipsum.</p>
@@ -545,7 +548,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <div class="gallery-grid1">
-                            <img src="images/g8.jpg" alt=" " class="img-responsive" />
+                            <img src="~/web/images/g8.jpg" alt=" " class="img-responsive" />
                             <div class="p-mask">
                                 <h4>In <span>Harvest</span></h4>
                                 <p>Neque porro quisquam est, qui dolorem ipsum.</p>
@@ -554,7 +557,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <div class="gallery-grid1">
-                            <img src="images/g9.jpg" alt=" " class="img-responsive" />
+                            <img src="~/web/images/g9.jpg" alt=" " class="img-responsive" />
                             <div class="p-mask">
                                 <h4>In <span>Harvest</span></h4>
                                 <p>Neque porro quisquam est, qui dolorem ipsum.</p>
@@ -563,7 +566,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <div class="gallery-grid1">
-                            <img src="images/g10.jpg" alt=" " class="img-responsive" />
+                            <img src="~/web/images/g10.jpg" alt=" " class="img-responsive" />
                             <div class="p-mask">
                                 <h4>In <span>Harvest</span></h4>
                                 <p>Neque porro quisquam est, qui dolorem ipsum.</p>
@@ -572,7 +575,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <div class="gallery-grid1">
-                            <img src="images/g11.jpg" alt=" " class="img-responsive" />
+                            <img src="~/web/images/g11.jpg" alt=" " class="img-responsive" />
                             <div class="p-mask">
                                 <h4>In <span>Harvest</span></h4>
                                 <p>Neque porro quisquam est, qui dolorem ipsum.</p>
@@ -581,7 +584,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <div class="gallery-grid1">
-                            <img src="images/g12.jpg" alt=" " class="img-responsive" />
+                            <img src="~/web/images/g12.jpg" alt=" " class="img-responsive" />
                             <div class="p-mask">
                                 <h4>In <span>Harvest</span></h4>
                                 <p>Neque porro quisquam est, qui dolorem ipsum.</p>
