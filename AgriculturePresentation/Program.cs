@@ -24,6 +24,8 @@ builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
 builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
 builder.Services.AddScoped<IAboutService, AboutManager>();
 builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+builder.Services.AddScoped<IAdminService, AdminManager>();
+builder.Services.AddScoped<IAdminDal, EfAdminDal>();
 
 builder.Services.AddDbContext<AgricultureContext>();
 builder.Services.AddControllersWithViews();
