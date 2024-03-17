@@ -28,12 +28,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
     <!-- //header -->
-    <!-- //navbar -->
+    <!-- navbar -->
     @await Component.InvokeAsync("_NavbarPartial")
     <!-- //navbar -->
     <!-- about -->
     @await Component.InvokeAsync("_AboutPartial")
-    <!-- //about-bottom -->
+    <!-- //about-->
     <!--sevices-->
     @await Component.InvokeAsync("_ServicePartial")
     <!--//sevices-->
@@ -43,7 +43,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!--blog -->
     @await Component.InvokeAsync("_AnnouncementPartial")
     <!--//blog -->
-    <!--/gallery-->
+    <!--gallery-->
     @await Component.InvokeAsync("_GalleryPartial")
     <!--//gallery-->
 
@@ -64,7 +64,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="copy">
         <p>© @DateTime.Now.Year In Harvest . Tüm Hakları Saklıdır | Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
     </div>
-    <!--/footer -->
+    <!--//footer -->
 
     <!-- js -->
     @await Html.PartialAsync("/Views/Default/ScriptPartial.cshtml")
