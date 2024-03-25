@@ -2,23 +2,74 @@
     <div class="col-md-7 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <p class="card-title">Cash deposits</p>
-                <p class="mb-4">To start a blog, think of a topic about and first brainstorm party is ways to write details</p>
-                <div id="cash-deposits-chart-legend" class="d-flex justify-content-center pt-3"></div>
-                <canvas id="cash-deposits-chart"></canvas>
+                <canvas id="scatterChart" style="max-width: 700px"></canvas>
             </div>
         </div>
     </div>
     <div class="col-md-5 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <p class="card-title">Total sales</p>
-                <h1>$ 28835</h1>
-                <h4>Gross sales over the years</h4>
-                <p class="text-muted">Today, many people rely on computers to do homework, work, and create or store useful information. Therefore, it is important </p>
-                <div id="total-sales-chart-legend"></div>
+                <canvas id="barChart" style="max-width: 600px"></canvas>
             </div>
-            <canvas id="total-sales-chart"></canvas>
         </div>
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script>
+    // Scatter Plot
+    const scatterData = [
+        { x: 50, y: 7 },
+        { x: 60, y: 8 },
+        { x: 70, y: 8 },
+        { x: 80, y: 9 },
+        { x: 90, y: 9 },
+        { x: 100, y: 9 },
+        { x: 110, y: 10 },
+        { x: 120, y: 11 },
+        { x: 130, y: 14 },
+        { x: 140, y: 14 },
+        { x: 150, y: 15 }
+    ];
+
+    new Chart(document.getElementById("scatterChart"), {
+        type: "scatter",
+        data: {
+            datasets: [{
+                pointRadius: 4,
+                pointBackgroundColor: "rgb(0,0,255)",
+                data: scatterData
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                xAxes: [{ ticks: { min: 40, max: 160 } }],
+                yAxes: [{ ticks: { min: 6, max: 16 } }],
+            }
+        }
+    });
+
+    // Bar Chart
+    const barLabels = ["Italy", "France", "Spain", "USA", "Argentina"];
+    const barData = [55, 49, 44, 24, 15];
+    const barColors = ["red", "green", "blue", "orange", "brown"];
+
+    new Chart(document.getElementById("barChart"), {
+        type: "bar",
+        data: {
+            labels: barLabels,
+            datasets: [{
+                backgroundColor: barColors,
+                data: barData
+            }]
+        },
+        options: {
+            legend: { display: false },
+            title: {
+                display: true,
+                text: "World Milk Production 2018"
+            }
+        }
+    });
+</script>
