@@ -51,8 +51,8 @@
     });
 
     // Bar Chart
-    const barLabels = ["Italy", "France", "Spain", "USA", "Argentina"];
-    const barData = [55, 49, 44, 24, 15];
+    const barLabels = ["Buğday", "Arpa", "Mısır", "Mercimek", "Pirinç"];
+    const barData = [@ViewBag.v1, 49, 44, @ViewBag.v2, 15];
     const barColors = ["red", "green", "blue", "orange", "brown"];
 
     new Chart(document.getElementById("barChart"), {
@@ -68,7 +68,7 @@
             legend: { display: false },
             title: {
                 display: true,
-                text: "World Milk Production 2018"
+                text: "2024 Bakliyat Üretimi"
             }
         }
     });

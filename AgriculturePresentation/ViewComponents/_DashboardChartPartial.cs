@@ -6,6 +6,13 @@ namespace AgriculturePresentation.ViewComponents
     {
         public IViewComponentResult Invoke()
         {
+            ViewBag.v1 = 88;
+            ViewBag.v2 = 93;
+            ViewBag.v1 = 88;
+            ViewBag.v1 = 88;
+            ViewBag.v1 = 88;
+            ViewBag.v1 = 88;
+
             return View();
         }
     }
