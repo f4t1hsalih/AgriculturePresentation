@@ -1,19 +1,33 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Exel Raporları</h1>
+<h1 class="text-center mb-4">Excel Raporları</h1>
 
-<div class="form-group">
-    <a href="/Report/StaticReport/" class="btn btn-outline-info">Static Raporları</a>
-</div>
-
-<div class="form-group">
-    <a href="/Report/MessageReport/" class="btn btn-outline-primary">Mesaj Raporları</a>
-</div>
-
-<div class="form-group">
-    <a href="/Report/AnnouncementReport/" class="btn btn-outline-info">Mesaj Raporları</a>
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Statik Raporlar</h5>
+                <a href="/Report/StaticReport/" class="btn btn-outline-info">Raporu İndir</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Mesaj Raporları</h5>
+                <a href="/Report/ContactReport/" class="btn btn-outline-primary">Raporu İndir</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Duyuru Raporları</h5>
+                <a href="/Report/AnnouncementReport/" class="btn btn-outline-info">Raporu İndir</a>
+            </div>
+        </div>
+    </div>
 </div>
