@@ -56,6 +56,7 @@ namespace AgriculturePresentation.Controllers
             List<ContactModel> contactModels = new List<ContactModel>();
             using (var context = new AgricultureContext())
             {
+                // İletişim bilgileri veritabanından alınır ve ContactModel nesnelerine dönüştürülür.
                 contactModels = context.Contacts.Select(x => new ContactModel
                 {
                     ContactID = x.ContactID,
@@ -83,6 +84,7 @@ namespace AgriculturePresentation.Controllers
                 int contactRowCount = 2;
                 foreach (var item in ContactList())
                 {
+                    // Her bir iletişim bilgisi, Excel tablosuna eklenir.
                     workSheet.Cell(contactRowCount, 1).Value = item.ContactID;
                     workSheet.Cell(contactRowCount, 2).Value = item.ContactName;
                     workSheet.Cell(contactRowCount, 3).Value = item.ContactMail;
@@ -92,17 +94,66 @@ namespace AgriculturePresentation.Controllers
                 }
                 using (var stream = new MemoryStream())
                 {
+                    // Excel dosyası bir akışa kaydedilir ve akış içeriği byte dizisine dönüştürülür.
                     workBook.SaveAs(stream);
                     var content = stream.ToArray();
+                    // Excel dosyası indirme için File metodunu kullanarak döndürülür.
                     return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Mesaj_Rapor.xlsx");
                 }
             }
         }
 
-        // AnnouncementReport eylemi, duyuru raporu için bir görünüm döndürür.
+        // AnnouncementList metodu, veritabanından duyuru bilgilerini almak için kullanılır.
+        public List<AnnouncementModel> AnnouncementList()
+        {
+            List<AnnouncementModel> announcementModels = new List<AnnouncementModel>();
+            using (var context = new AgricultureContext())
+            {
+                // Duyuru bilgileri veritabanından alınır ve AnnouncementModel nesnelerine dönüştürülür.
+                announcementModels = context.Announcements.Select(x => new AnnouncementModel
+                {
+                    ID = x.AnnouncementID,
+                    Title = x.Title,
+                    Description = x.Description,
+                    Date = x.Date,
+                    Status = x.Status
+                }).ToList();
+            }
+            return announcementModels;
+        }
+
+        // AnnouncementReport eylemi, duyuru bilgilerini içeren bir Excel raporu oluşturur ve indirme işlemi gerçekleştirir.
         public IActionResult AnnouncementReport()
         {
-            return View();
+            using (var workBook = new XLWorkbook())
+            {
+                var workSheet = workBook.Worksheets.Add("Duyuru Listesi");
+                workSheet.Cell(1, 1).Value = "Duyuru ID";
+                workSheet.Cell(1, 2).Value = "Duyuru Başlığı";
+                workSheet.Cell(1, 3).Value = "Duyuru Açıklaması";
+                workSheet.Cell(1, 4).Value = "Duyuru Tarihi";
+                workSheet.Cell(1, 5).Value = "Durum";
+
+                int announcementRowCount = 2;
+                foreach (var item in AnnouncementList())
+                {
+                    // Her bir duyuru bilgisi, Excel tablosuna eklenir.
+                    workSheet.Cell(announcementRowCount, 1).Value = item.ID;
+                    workSheet.Cell(announcementRowCount, 2).Value = item.Title;
+                    workSheet.Cell(announcementRowCount, 3).Value = item.Description;
+                    workSheet.Cell(announcementRowCount, 4).Value = item.Date;
+                    workSheet.Cell(announcementRowCount, 5).Value = item.Status;
+                    announcementRowCount++;
+                }
+                using (var stream = new MemoryStream())
+                {
+                    // Excel dosyası bir akışa kaydedilir ve akış içeriği byte dizisine dönüştürülür.
+                    workBook.SaveAs(stream);
+                    var content = stream.ToArray();
+                    // Excel dosyası indirme için File metodunu kullanarak döndürülür.
+                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Duyuru_Rapor.xlsx");
+                }
+            }
         }
     }
 }
