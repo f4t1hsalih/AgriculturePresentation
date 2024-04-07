@@ -3,6 +3,9 @@ using BusinessLayer.Concrete;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.EntityFramework;
 using DataAccessLayer.Contexts;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 //FS
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +32,18 @@ builder.Services.AddScoped<IAdminDal, EfAdminDal>();
 
 builder.Services.AddDbContext<AgricultureContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddMvc(config =>
+{
+    var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+    config.Filters.Add(new AuthorizeFilter(policy));
+});
+
+builder.Services.AddMvc();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x =>
+{
+    x.LoginPath = "/Login/Index/";
+});
 
 var app = builder.Build();
 
