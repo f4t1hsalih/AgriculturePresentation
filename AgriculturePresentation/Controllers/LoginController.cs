@@ -27,14 +27,14 @@ namespace AgriculturePresentation.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(loginViewModel.userName, loginViewModel.password, false, false);
+                var result = await _signInManager.PasswordSignInAsync(loginViewModel.username, loginViewModel.password, false, false);
                 if (result.Succeeded)
                 {
-                    RedirectToAction("Index", "Dashboard");
+                    return RedirectToAction("Index", "Dashboard");
                 }
                 else
                 {
-                    RedirectToAction("Index");
+                    return RedirectToAction("Index");
                 }
             }
             return View();
