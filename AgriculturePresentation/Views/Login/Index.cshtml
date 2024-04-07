@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giriş Yap</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,6 +33,7 @@
 
         .form-group {
             margin-bottom: 20px;
+            position: relative;
         }
 
             .form-group label {
@@ -40,8 +42,8 @@
             }
 
             .form-group input {
-                width: calc(100% - 20px);
-                padding: 10px;
+                width: calc(100% - 40px); /* Göster/Gizle düğmesi için ayarlanmış genişlik */
+                padding: 15px; /* Textbox'ın iç boşluğunu artırır */
                 border: 1px solid #ccc;
                 border-radius: 5px;
                 margin-bottom: 10px;
@@ -52,6 +54,16 @@
                     border-color: #007bff;
                     outline: none;
                 }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+        }
 
         .btn {
             background-color: #007bff;
@@ -71,7 +83,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Login</h2>
+        <h2>Giriş Yap</h2>
         <form method="post">
             <div class="form-group">
                 <label for="username">Kullanıcı Adı:</label>
@@ -79,10 +91,25 @@
             </div>
             <div class="form-group">
                 <label for="password">Şifre:</label>
-                <input type="password" asp-for="password" placeholder="Şifrenizi Girin" required="">
+                <input type="password" asp-for="password" id="password" placeholder="Şifrenizi Girin" required="">
+                <span class="material-icons toggle-password" onclick="togglePasswordVisibility()">visibility_off</span>
             </div>
             <button type="submit" class="btn">Giriş Yap</button>
         </form>
     </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("password");
+            var icon = document.querySelector('.toggle-password');
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.textContent = 'visibility';
+            } else {
+                passwordField.type = "password";
+                icon.textContent = 'visibility_off';
+            }
+        }
+    </script>
 </body>
 </html>
